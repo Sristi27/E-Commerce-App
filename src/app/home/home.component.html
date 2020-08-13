@@ -1,8 +1,13 @@
 <mat-toolbar color="primary">
-    <span><a routerLink="/">M-Mart</a></span>
-    <span>
-        <a><button mat-button routerLink="/login">Login</button></a>
-        <a><button mat-button routerLink="/signup">SignUp</button></a>
-    </span>
-
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>M Mart</span>
+      <span class="example-spacer"></span>
+      <button mat-button (click)="router.navigate(['/login'])">
+        Login
+      </button>
+      <button mat-button (click)="router.navigate(['/signup'])">
+        Signup
+      </button>
 </mat-toolbar>

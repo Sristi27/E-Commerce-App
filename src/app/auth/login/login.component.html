@@ -1,1 +1,28 @@
-<p>login works!</p>
+<mat-card>
+    <mat-card-title>
+        <h1>Sign In</h1>
+    </mat-card-title>
+    <mat-card-content>
+        <form (submit)="onLogin(f)" #f="ngForm">
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input type="email" placeholder="Ex:abc@gmail.com"
+                required matInput ngModel #email [ngModel]="email">
+                <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" matInput ngModel 
+                #password [ngModel]="password" required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">Sign In</button>
+
+        </form>
+    </mat-card-content>
+    <mat-card-actions style="text-align: center;margin-bottom: 10px;">
+        <span>New here?</span>
+        <button mat-button routerLink="/signup">Sign Up
+        </button>
+    </mat-card-actions>
+</mat-card>

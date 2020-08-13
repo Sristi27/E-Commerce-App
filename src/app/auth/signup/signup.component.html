@@ -1,1 +1,30 @@
-<p>signup works!</p>
+<mat-card>
+    <mat-card-title><h1>
+        Sign Up
+    </h1></mat-card-title>
+    <mat-card-content>
+        <form (submit)="onSignup(f)" #f="ngForm">
+            <mat-form-field appearance="standard">
+                <mat-label>Email</mat-label>
+                <input type="email" placeholder="Ex:abc@gmail.com" matInput ngModel #email [ngModel]="email">
+                <mat-icon matSuffix>mail</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" matInput ngModel 
+                #password [ngModel]="password" required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">
+                Sign Up
+            </button>
+
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions style="text-align: center;margin-bottom: 10px;">
+        <span>Already have an account?</span>
+        <button mat-button routerLink="/login">Sign In
+        </button>
+    </mat-card-actions>
+</mat-card>

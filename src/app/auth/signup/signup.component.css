@@ -1,0 +1,22 @@
+mat-card{
+    width:30%;
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-30%);
+    display: block;
+}
+form
+{
+    width:90%;
+    margin: 5px auto;
+    display: block;
+}
+mat-form-field,mat-card-content button{
+    width: 100%;
+    margin:10px 0;
+}
+h1{
+    margin: 20px;
+    text-align: center;
+}
