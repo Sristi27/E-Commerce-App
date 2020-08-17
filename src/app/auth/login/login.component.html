@@ -7,13 +7,13 @@
             <mat-form-field appearance="standard">
                 <mat-label>Email</mat-label>
                 <input type="email" placeholder="Ex:abc@gmail.com"
-                required matInput ngModel #email [ngModel]="email">
+                required matInput ngModel  #email="ngModel" name="email" >
                 <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Password</mat-label>
                 <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" matInput ngModel 
-                #password [ngModel]="password" required>
+                #password="ngModel" name="password" required>
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
             <button mat-raised-button color="primary" type="submit">Sign In</button>

@@ -2,7 +2,8 @@
     <button mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
-      <span>M Mart</span>
+      <a routerLink="/"class="brand">M-Mart</a>
+      <button mat-button routerLink="/products">Products</button>
       <span class="example-spacer"></span>
       <button mat-button (click)="router.navigate(['/login'])">
         Login
