@@ -1,11 +1,17 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-  .active-class{
-    background-color:rgb(196, 237, 250);
-  }
-  .brand{
-    text-decoration: none;
-    color: white;
-    margin:0 13px;
-  }
+div{
+  top:50%;
+  left:50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  height:250px;
+}
+p{
+ 
+  font-size: 50px;
+  padding: 100px;
+  height: 250px;
+  background: -webkit-linear-gradient(#eee, rgb(148, 9, 153));
+  background-clip:initial;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

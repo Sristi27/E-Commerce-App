@@ -6,7 +6,7 @@ const authRoutes=require('./routes/auth');
 
 const app=express();
 
-mongoose.connect('mongodb://localhost/shoppingdb',{ useNewUrlParser: true, useUnifiedTopology: true },
+mongoose.connect('mongodb://localhost/shopdb',{ useNewUrlParser: true, useUnifiedTopology: true },
     (err) => {
         if (!err) {
             console.log("Database connected");
@@ -15,6 +15,11 @@ mongoose.connect('mongodb://localhost/shoppingdb',{ useNewUrlParser: true, useUn
         }
     }
 );
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 
 
 app.use((req, res, next) => {
@@ -26,12 +31,6 @@ app.use((req, res, next) => {
 }
 )
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
-
-
 app.use("/api/user",authRoutes);
-
 
 module.exports=app;

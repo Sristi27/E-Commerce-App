@@ -1,1 +1,13 @@
-<p>products works!</p>
+<mat-grid-list cols="5" rowHeight="600px">
+<mat-grid-tile  *ngFor="let product of products" >
+        <mat-card>
+            <mat-card-title>{{product.name}}</mat-card-title>
+            <mat-card-content>
+                <img src="{{product.image_url}}" alt="{{product.name}}" mat-card-image>
+                <p>Brand:{{product.brand}}</p>
+                <p>Price: <span class="old-price"><strike>{{product.price}}</strike></span> <span>{{product.sale_price}}</span>Rupees</p>
+
+            </mat-card-content>
+        </mat-card>
+</mat-grid-tile>
+</mat-grid-list>

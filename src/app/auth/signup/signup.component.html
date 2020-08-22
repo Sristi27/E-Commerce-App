@@ -1,20 +1,41 @@
 <mat-card>
-    <mat-card-title><h1>
-        Sign Up
-    </h1></mat-card-title>
+    <mat-card-title>
+        <h1>
+            Sign Up
+        </h1>
+    </mat-card-title>
     <mat-card-content>
-        <form (submit)="onSignup(f)" #f="ngForm">
+        <form (submit)="onSignup()" [formGroup]="userGroup">
+            <mat-form-field appearance="standard">
+                <mat-label>Name</mat-label>
+                <input type="text" placeholder="Enter your name" 
+                matInput formControlName="name">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Email</mat-label>
-                <input type="email" placeholder="Ex:abc@gmail.com" matInput ngModel name="email" #email="ngModel">
+                <input type="email" placeholder="Ex:abc@gmail.com" 
+                matInput formControlName="email">
                 <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
             <mat-form-field appearance="standard">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" matInput ngModel 
-                name="password" #password="ngModel" required>
+                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" 
+                matInput formControlName="password" >
                 <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
+
+            <mat-form-field appearance="standard">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Enter your password again" [type]="hide ? 'password' : 'text'" 
+                matInput formControlName="repeat" >
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>
+            
+           <mat-error *ngIf="!userGroup.get('repeat').valid &&  userGroup.get('repeat').errors['passwordMatch']">
+                Passwords should match!
+            
+           </mat-error>
             <button mat-raised-button color="primary" type="submit">
                 Sign Up
             </button>

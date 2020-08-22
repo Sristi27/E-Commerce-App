@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a routerLink="/"class="brand">M-Mart</a>
+      <button mat-button routerLink="/products" routerLinkActive="active">Products</button>
+      <span class="example-spacer"></span>
+      <button mat-button (click)="router.navigate(['/login'])" *ngIf="!status">
+        Login
+      </button>
+      <button mat-button (click)="router.navigate(['/signup'])" *ngIf="!status">
+        Signup
+      </button>
+      <a mat-icon-button  *ngIf="status" style="margin-right: 5px;">
+        <mat-icon>account_circle</mat-icon>{{username}}
+      </a>
+      <button mat-button (click)="router.navigate(['/'])" *ngIf="status"  style="margin-left:20px;">
+        Logout
+      </button>
+     
+</mat-toolbar>

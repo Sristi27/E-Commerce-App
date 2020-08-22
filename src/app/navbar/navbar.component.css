@@ -1,0 +1,12 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .active{
+    color:#673ab7;
+    background-color: ivory;
+  }
+  .brand{
+    text-decoration: none;
+    color: white;
+    margin:0 13px;
+  }
